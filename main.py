@@ -45,6 +45,14 @@ class SpeedTypingTest:
         self.result_label.pack(pady=20)
         self.start_time = timer()
     def check__result(self):
-        pass
+        typed_test = self.entry.get()
+        if typed_test == self.sentence:
+            end_time = timer()
+            time_taken = round(end_time - self.start_time,2)
+            words = len(self.sentence.split())
+            wpm = round((words/time_taken)*60,2)
+            self.result_label.config(text=f"Time Taken:{time_taken} sec | WPM: {wpm}",fg="#7EA16B")
+        else:
+            self.result_label.config(text=f"Incorrect TypingTry again!)",fg="#74121d")
     def reset_test(self):
         pass
