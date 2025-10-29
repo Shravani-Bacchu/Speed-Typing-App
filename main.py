@@ -1,7 +1,6 @@
 import tkinter as tk
 from timeit import default_timer as timer
 import random
-
 class SpeedTypingTest:
     def __init__(self, root):
         self.root = root
