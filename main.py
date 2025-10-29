@@ -6,7 +6,7 @@ class SpeedTypingTest:
         self.root = root
         self.root.title("Speed Typing Test")
         self.root.geometry("600x350")
-
+        root.configure(bg='#006EB8')
         self.sentences = [
     "It is only with the heart that one can see rightly; what is essential is invisible to the eye",
     "Not all those who wander are lost",
@@ -37,20 +37,20 @@ class SpeedTypingTest:
         """Set up the UI components."""
         self.sentence = random.choice(self.sentences)
         
-        self.label_sentence = tk.Label(self.root, text=self.sentence, font=("Arial", 14), wraplength=500)
+        self.label_sentence = tk.Label(self.root, text=self.sentence, font=("Arial", 14), wraplength=500,bg="#006EB8")
         self.label_sentence.pack(pady=20)
         
-        self.label_prompt = tk.Label(self.root, text="Type the above sentence:", font=("Arial", 12))
+        self.label_prompt = tk.Label(self.root, text="Type the above sentence:", font=("Arial", 12),bg="#006EB8")
         self.label_prompt.pack()
         
         self.entry = tk.Entry(self.root, width=50)
         self.entry.pack(pady=10)
         self.entry.bind("<Return>", lambda event: self.check_result())  # Allow Enter key to submit
         
-        self.button_done = tk.Button(self.root, text="Done", command=self.check_result, width=12, bg="#C2F8CB")
+        self.button_done = tk.Button(self.root, text="Done", command=self.check_result, width=12, bg="#155CE0")
         self.button_done.pack(pady=5)
         
-        self.button_retry = tk.Button(self.root, text="Try Again", command=self.reset_test, width=12, bg="#C2F8CB")
+        self.button_retry = tk.Button(self.root, text="Try Again", command=self.reset_test, width=12, bg="#155CE0")
         self.button_retry.pack(pady=5)
         
         self.result_label = tk.Label(self.root, text="", font=("Arial", 12))
